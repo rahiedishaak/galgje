@@ -14,3 +14,8 @@ const pickWord = function(array) {
 
 // Pick word from array
 let word = pickWord(words);
+
+// Set number of attempts
+let attempts = 5;
+
+// Add Word to DOM
