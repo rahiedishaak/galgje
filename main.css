@@ -8,7 +8,35 @@ html {
     font-size: 62.5%; /* 1rem is nu 10px, in plaats van 16px */
 }
 
+body {
+    font-family: Verdana, sans-serif;
+}
+
+.container {
+    width: 80%;
+    max-width: 80rem;
+    margin: 2rem auto;
+}
+
 h1 {
-    background-color: red;
     margin-bottom: 2rem;
+    font-size: 4rem;
+}
+
+#word {
+    margin-bottom: 3rem;
+    font-size: 3rem;
+}
+
+#guess-form {
+    margin-bottom: 2rem;
+}
+
+#attempts {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+#guessed-letters {
+    font-size: 1.5rem;
 }
