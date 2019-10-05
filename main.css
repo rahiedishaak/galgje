@@ -10,37 +10,45 @@ html {
 
 body {
     font-family: Verdana, sans-serif;
+    background-image: linear-gradient(to bottom, #000099, #000033);
+    color: #fff;
 }
 
 .container {
     width: 80%;
-    max-width: 80rem;
-    margin: 2rem auto;
-}
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
 
-h1 {
-    margin-bottom: 2rem;
-    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #word {
-    margin-bottom: 3rem;
-    font-size: 3rem;
+    margin-bottom: 5rem;
+    font-size: 7rem;
 }
 
 #word span {
     margin-right: 2rem;
 }
 
-#guess-form {
-    margin-bottom: 2rem;
+#word span:last-child {
+    margin-right: 0;
 }
 
 #attempts {
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
+    margin-bottom: 5rem;
+    font-size: 3.5rem;
+    letter-spacing: 1.5px;
 }
 
 #guessed-letters {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+}
+
+#guessed-letters span {
+    margin-right: .5rem;
 }
