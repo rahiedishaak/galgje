@@ -14,3 +14,10 @@ const pickWord = function(array) {
 
 // Pick word from array
 let word = pickWord(words);
+
+word.forEach(letter => {
+    const wordEl = document.querySelector('#word');
+    const spanEl = document.createElement('span');
+    spanEl.textContent = letter;
+    wordEl.appendChild(spanEl);
+});
