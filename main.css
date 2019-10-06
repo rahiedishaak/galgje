@@ -45,10 +45,33 @@ body {
 }
 
 #guessed-letters {
+    margin-bottom: 5rem;
     font-size: 3rem;
     letter-spacing: 1.5px;
 }
 
 #guessed-letters span {
     margin-right: .5rem;
+}
+
+#btn-reset {
+    align-self: center;
+    background-image: linear-gradient(to bottom, #990000, #660000);
+    padding: 1rem 2rem;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(0,0,0, .4);
+    color: #fff;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+#btn-reset:hover {
+    background-image: linear-gradient(to top, #990000, #660000);
+}
+
+#btn-reset:active,
+#btn-reset:focus {
+    outline: none;
 }
