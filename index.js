@@ -2,8 +2,9 @@
 const wordEl = document.querySelector('#word');
 const attemptsEl = document.querySelector('#attempts');
 const attemptsElSpan = document.querySelector('#attempts-number');
-const guessedMessageEl = document.querySelector('#guessed-message');
+const guessedMessageEl = document.createElement('span');
 const guessedLettersEl = document.querySelector('#guessed-letters');
+const resetBtn = document.querySelector('#btn-reset');
 
 // Array with words that will be used for game
 const words = ['HTML', 'CSS', 'Javascript', 'ReactJS', 'NodeJS', 'MongoDB', 'Python', 'PHP', 'MySQL', 'Ruby'];
@@ -48,6 +49,7 @@ const checkComplete = function() {
 
     if (allGuessed) {
         attemptsEl.textContent = 'Je hebt gewonnen!';
+        resetBtn.textContent = 'Win nog een keer!'
         isPlaying = false;
     }
 }
@@ -74,6 +76,10 @@ const startGame = () => {
     attempts = 5;
     isPlaying = true;
     guessedLetters = [];
+    guessedLettersEl.innerHTML = ''
+    guessedMessageEl.textContent = 'Raad letters via je toetsenbord';
+    guessedLettersEl.appendChild(guessedMessageEl);
+    resetBtn.textContent = 'Herstart';
     renderLetters();
     renderAttempts();
 }
@@ -106,3 +112,5 @@ document.addEventListener('keypress', function(e) {
         }
     }
 });
+
+resetBtn.addEventListener('click', startGame);
