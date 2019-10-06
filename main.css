@@ -5,21 +5,16 @@
 }
 
 html {
-    font-size: 62.5%; /* 1rem is nu 10px, in plaats van 16px */
+    font-size: 62.5%;
 }
 
 body {
-    font-family: Verdana, sans-serif;
     background-image: linear-gradient(to bottom, #000099, #000033);
+    font-family: Verdana, sans-serif;
     color: #fff;
-}
-
-.container {
-    width: 80%;
-    height: 100vh;
-    margin: 0 auto;
     text-align: center;
-
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,7 +22,7 @@ body {
 
 #word {
     margin-bottom: 5rem;
-    font-size: 9rem;
+    font-size: 6rem;
 }
 
 #word span {
@@ -39,14 +34,16 @@ body {
 }
 
 #attempts {
+    color: rgba(255, 255, 255, .8);
     margin-bottom: 5rem;
-    font-size: 4.5rem;
+    font-size: 4rem;
     letter-spacing: 1.5px;
 }
 
 #guessed-letters {
+    color: rgba(255, 255, 255, .6);
     margin-bottom: 5rem;
-    font-size: 3rem;
+    font-size: 4rem;
     letter-spacing: 1.5px;
 }
 
@@ -62,7 +59,7 @@ body {
     border-radius: 3px;
     box-shadow: 0 2px 2px rgba(0,0,0, .4);
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     letter-spacing: 1.5px;
     cursor: pointer;
 }
@@ -74,4 +71,47 @@ body {
 #btn-reset:active,
 #btn-reset:focus {
     outline: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 750px) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    html {
+        font-size: 43.75%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 37.5%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    html {
+        font-size: 31.25%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    html {
+        font-size: 25%;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    html {
+        font-size: 18.75%;
+    }
 }
