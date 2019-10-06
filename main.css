@@ -27,7 +27,7 @@ body {
 
 #word {
     margin-bottom: 5rem;
-    font-size: 7rem;
+    font-size: 9rem;
 }
 
 #word span {
@@ -40,12 +40,12 @@ body {
 
 #attempts {
     margin-bottom: 5rem;
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     letter-spacing: 1.5px;
 }
 
 #guessed-letters {
-    font-size: 2rem;
+    font-size: 3rem;
     letter-spacing: 1.5px;
 }
 

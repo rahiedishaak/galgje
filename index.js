@@ -2,38 +2,20 @@
 const wordEl = document.querySelector('#word');
 const attemptsEl = document.querySelector('#attempts');
 const attemptsElSpan = document.querySelector('#attempts-number');
+const guessedMessageEl = document.querySelector('#guessed-message');
 const guessedLettersEl = document.querySelector('#guessed-letters');
 
 // Array with words that will be used for game
 const words = ['HTML', 'CSS', 'Javascript', 'ReactJS', 'NodeJS', 'MongoDB', 'Python', 'PHP', 'MySQL', 'Ruby'];
 
 // Generate random index number to pick element from array
-const generateRandomIndex = function(array) {
-    return Math.floor(Math.random() * array.length);
-};
+const generateRandomIndex = array => Math.floor(Math.random() * array.length);
 
 // Function to pick element from array
-const picElement = function(array) {
-    const index = generateRandomIndex(array);
-    return array[index];
-}
+const picElement = array => array[generateRandomIndex(array)];
 
 // Pick word from array, toLowerCase, split into array of letters
-const splitWord = function(array) {
-    let word = picElement(array);
-    word = word.toLowerCase();
-    word = word.split('');
-    return word;
-}
-
-// Get array of letters from picked word
-let word = splitWord(words);
-
-// Set number of attempts
-let attempts = 5;
-
-// Array with guessed letters
-let guessedLetters = [];
+const splitWord = array => picElement(array).toLowerCase().split('');
 
 // Add Word to DOM
 const renderLetters = function() {
@@ -66,6 +48,7 @@ const checkComplete = function() {
 
     if (allGuessed) {
         attemptsEl.textContent = 'Je hebt gewonnen!';
+        isPlaying = false;
     }
 }
 
@@ -79,15 +62,31 @@ const gameOver = function() {
     });
 }
 
-renderLetters();
-renderAttempts();
+// Game variables
+let attempts;
+let word;
+let guessedLetters;
+let isPlaying;
+
+// Start Game
+const startGame = () => {
+    word = splitWord(words);
+    attempts = 5;
+    isPlaying = true;
+    guessedLetters = [];
+    renderLetters();
+    renderAttempts();
+}
+
+startGame();
 
 document.addEventListener('keypress', function(e) {
-    if (((e.keyCode >= 97 && e.keyCode <= 122) || (e.keyCode >= 65 && e.keyCode <= 90)) && attempts > 0) {
+    if (((e.keyCode >= 97 && e.keyCode <= 122) || (e.keyCode >= 65 && e.keyCode <= 90)) && attempts > 0 && isPlaying) {
         letterGuess = e.key.toLowerCase();
         if (!guessedLetters.includes(letterGuess)) {
             guessedLetters.push(letterGuess);
-    
+
+            guessedMessageEl.textContent = 'Al gegokte letters: '    
             const spanEl = document.createElement('span');
             spanEl.textContent = letterGuess;
             guessedLettersEl.appendChild(spanEl);
@@ -99,6 +98,7 @@ document.addEventListener('keypress', function(e) {
                 attempts--;
                 if (attempts === 0) {
                     gameOver();
+                    isPlaying = false;
                 } else {
                     renderAttempts();
                 }
